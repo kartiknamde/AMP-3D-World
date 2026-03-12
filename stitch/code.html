@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AMP 3D World - Divine Deities Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2930d", // Saffron Orange
+                        "secondary": "#800000", // Maroon
+                        "accent": "#005a7d", // Peacock Blue
+                        "background-light": "#f8f7f5", // Beige/Off-white
+                        "background-dark": "#221b10",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-brush-btn {
+            position: relative;
+            background: #f2930d;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .custom-brush-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: skewX(-20deg);
+            z-index: -1;
+        }
+        .pattern-bg {
+            background-color: #f2930d;
+            background-image: radial-gradient(#800000 0.5px, transparent 0.5px), radial-gradient(#800000 0.5px, #f2930d 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white/80 backdrop-blur-md px-6 md:px-20 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-secondary">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-4xl">temple_hindu</span>
+</div>
+<h2 class="text-secondary text-xl font-bold leading-tight tracking-tight">AMP 3D World</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-700 hover:text-primary text-sm font-semibold transition-colors" href="#">Shop</a>
+<a class="text-slate-700 hover:text-primary text-sm font-semibold transition-colors" href="#">Collections</a>
+<a class="text-slate-700 hover:text-primary text-sm font-semibold transition-colors" href="#">Custom</a>
+<a class="text-slate-700 hover:text-primary text-sm font-semibold transition-colors" href="#">About</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-6 items-center">
+<label class="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-primary flex border-none bg-primary/5 items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-primary/5 focus:ring-2 focus:ring-primary/20 h-full placeholder:text-primary/50 px-4 rounded-r-xl text-base font-normal" placeholder="Search Divine Art" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-secondary/10 text-secondary hover:bg-secondary hover:text-white transition-all">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto w-full px-6 md:px-20 py-6">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 py-4 items-center text-sm">
+<a class="text-slate-500 hover:text-primary font-medium" href="#">Home</a>
+<span class="material-symbols-outlined text-xs text-slate-400">chevron_right</span>
+<a class="text-slate-500 hover:text-primary font-medium" href="#">Shop</a>
+<span class="material-symbols-outlined text-xs text-slate-400">chevron_right</span>
+<span class="text-secondary font-bold">Deities</span>
+</nav>
+<!-- Banner Section -->
+<div class="relative overflow-hidden rounded-xl md:rounded-3xl mb-10 bg-secondary">
+<div class="absolute inset-0 pattern-bg opacity-20"></div>
+<div class="relative z-10 grid md:grid-cols-2 items-center">
+<div class="p-8 md:p-16 space-y-4">
+<span class="bg-primary/20 text-primary border border-primary/30 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Premium Collection</span>
+<h1 class="text-white text-4xl md:text-6xl font-bold leading-tight">Divine Deities</h1>
+<p class="text-background-light/80 text-lg max-w-md leading-relaxed">
+                            Explore our exquisite collection of 3D-printed deity miniatures, blending ancient spirituality with modern craftsmanship. Each piece is meticulously designed to bring divine grace to your space.
+                        </p>
+</div>
+<div class="flex justify-center md:justify-end p-8">
+<div class="relative w-64 h-64 md:w-96 md:h-96 group">
+<div class="absolute inset-0 bg-primary rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+<img class="relative z-10 w-full h-full object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500" data-alt="Intricate gold 3D deity miniature on decorative stand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxKPPpA0LSMzOpQq1e6tqQ2I3-QXJAECYO6py5qK9CBxeqPKfJO5kpJfOXRyLV5ZirTYfOeyWmWH6dQEZU27f7xidZpHRHnlCH-2H_nsDlMW_jIc6HPcfIH6hVlmq27POSJoo723VPc7fy5Y8JIYblq7dHreuiYleFnaIaguXEwaFXlf7moDg9-wdEU66hyVdtRfcQIGWd7PVnnslIaQzD_3-f8GAdnw2rbdFJQl4hQ2ZUobbcKDjyp_oWfupO8j9BZP3LorxCC5_y"/>
+</div>
+</div>
+</div>
+<!-- Warli Border Detail -->
+<div class="h-2 bg-primary/50 w-full"></div>
+</div>
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Sidebar -->
+<aside class="w-full lg:w-72 flex-shrink-0 space-y-8">
+<div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<h3 class="text-lg font-bold text-secondary">Refine Search</h3>
+</div>
+<div class="space-y-6">
+<!-- Category Filter -->
+<div class="space-y-3">
+<h4 class="font-bold text-sm text-slate-900 uppercase tracking-wider">Categories</h4>
+<div class="space-y-1">
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-primary text-white font-medium" href="#">
+<span>Deities</span>
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-primary/5 text-slate-700 transition-colors" href="#">
+<span>Architectural</span>
+<span class="text-xs text-slate-400">12</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-primary/5 text-slate-700 transition-colors" href="#">
+<span>Ritual Items</span>
+<span class="text-xs text-slate-400">08</span>
+</a>
+</div>
+</div>
+<!-- Price range -->
+<div class="space-y-3">
+<h4 class="font-bold text-sm text-slate-900 uppercase tracking-wider">Price Range</h4>
+<div class="px-2">
+<input class="w-full accent-primary bg-primary/20 h-1.5 rounded-full appearance-none cursor-pointer" type="range"/>
+<div class="flex justify-between mt-2 text-xs text-slate-500">
+<span>₹500</span>
+<span>₹25,000+</span>
+</div>
+</div>
+</div>
+<!-- Material Filter -->
+<div class="space-y-3">
+<h4 class="font-bold text-sm text-slate-900 uppercase tracking-wider">Material</h4>
+<div class="grid grid-cols-1 gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary w-5 h-5" type="checkbox"/>
+<span class="text-slate-700 group-hover:text-primary transition-colors">High-Detail Resin</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary w-5 h-5" type="checkbox"/>
+<span class="text-slate-700 group-hover:text-primary transition-colors">Cold-Cast Bronze</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary w-5 h-5" type="checkbox"/>
+<span class="text-slate-700 group-hover:text-primary transition-colors">Sterling Silver 925</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary w-5 h-5" type="checkbox"/>
+<span class="text-slate-700 group-hover:text-primary transition-colors">24K Gold Plated</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<!-- Controls -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+<p class="text-slate-500">Showing <span class="font-bold text-slate-900">12</span> of 48 divine pieces</p>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<span class="text-sm font-semibold text-slate-600 shrink-0">Sort By:</span>
+<select class="form-select w-full sm:w-48 border-slate-200 rounded-xl focus:ring-primary focus:border-primary text-sm">
+<option>Popularity</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Average Rating</option>
+<option>Newest Arrivals</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+<div class="relative h-64 bg-slate-50 flex items-center justify-center p-6">
+<div class="absolute top-3 right-3 flex flex-col gap-2">
+<button class="bg-white/80 backdrop-blur-sm p-2 rounded-full text-slate-400 hover:text-red-500 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<img class="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Golden Ganesha 3D printed miniature with fine details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtZzWkROuQ06j8a6dXMC0LxuMU1UtVqek5GJ7NXCnT7gdwVLCkkhjHhPQq5yn7J0H8B7wzkAqPsFkwgNfylNmZ8ie6ZftlqKO6Dwyq8VlBi6IJllqPaSEeHTzEdT62xxkEMdj8YEfyObgVs8bd156x3vdCRN33agLwTbC95hCoHHuX__Rm3sZ9GEbJg0eKhrBXiYfaAGy0uvy8KJI-hCRvyoxiB2q-jhBCuzgMd6PxdlX9BGZjVbjtNJPTbqe5f1uDAu-gTutGs9p"/>
+<div class="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-secondary">Vighnaharta Ganesha</h3>
+<p class="text-xs text-slate-500">Resin &amp; Gold Leaf</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-slate-900">₹4,999</span>
+<span class="text-sm text-slate-400 line-through">₹6,499</span>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-2.5 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">shopping_basket</span>
+                                        Add to Cart
+                                    </button>
+<button class="custom-brush-btn px-4 py-2.5 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">brush</span>
+                                        Customize
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+<div class="relative h-64 bg-slate-50 flex items-center justify-center p-6">
+<span class="absolute top-3 left-3 bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase z-10">Bestseller</span>
+<img class="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Bronze finish Shiva Nataraja 3D miniature statue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPnXtVPEqz_SCCnDAh7Z49d4b8bORZ85gjrjmoOTbxq2_spCvYsfgM2kiaaftSsQtnO6xBlXHxf5-pu0IKhV-2VhY4AsKsKM4ZwpQgS4w46yi6WC5byQuqzUV-IMEMtayx21CyJr7vORG9DpGkbyT3am9W3YSJUlOVu-yKfDNefllz2VXZf9x_KurtPiUMVwR9A6hwnIbHot9gm3dkC6GExXZA-EAVy72utnSwBWYJaYOM01-lOsI5pFamZa2ukjx7C1nNiH_DOmMX"/>
+</div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-secondary">Nataraja Shiva</h3>
+<p class="text-xs text-slate-500">Cold-Cast Bronze</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold">5.0</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-slate-900">₹7,250</span>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-2.5 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">shopping_basket</span>
+                                        Add to Cart
+                                    </button>
+<button class="custom-brush-btn px-4 py-2.5 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">brush</span>
+                                        Customize
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+<div class="relative h-64 bg-slate-50 flex items-center justify-center p-6">
+<img class="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Silver plated Goddess Lakshmi figurine on lotus base" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7gPvaTh1RS6CbcmEdaOGT7rnvQYjR_pns721wVr7hfMHt5GggQQvobXb6-6Xf5Zl4rBcMQLqqxNuguFx1jVqcrfRIo_niiaKR9Eqf3NNWc5jD68FVD25zU7a7R-wt1iYpNM2HY4r_d7iLAGEon9urWAYwQ9wkuPam7OleZOOJ4aJ6ea-mSL2pqoSYigyQTngCtpQVdp9cBD1JLTNaISVoAXiDEJJy-el2rS8E_TtX_yMnvHpyBLpjXkC-sm-LvfRCmGZSiUq6KmTd"/>
+</div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-secondary">Dhanalakshmi</h3>
+<p class="text-xs text-slate-500">Sterling Silver Plated</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold">4.8</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-slate-900">₹12,999</span>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-2.5 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">shopping_basket</span>
+                                        Add to Cart
+                                    </button>
+<button class="custom-brush-btn px-4 py-2.5 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">brush</span>
+                                        Customize
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+<div class="relative h-64 bg-slate-50 flex items-center justify-center p-6">
+<img class="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Hand painted Krishna 3D miniature playing flute" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQkVaU9Vzb4pE9cu6XYsBzzq_8OkHRq_qevBuhCDx81P6gnMcFk1ccSm8MZlO0EvWyDfevikDZqu1RpEEU5AJMGNugxMFyzPjDxVYYxumOpgOcyujXJ0SbXCxBo7Fmny-BtvX06P_3FV26IC-GAsnGxmuXWKdy03uVLqVsZmn_Oly5Tg1LezWg2nBv8L3s-z4p7XBo9u9Moo1ucKMB5lvrBDrT05Sgauj8dV0PgOux7LTBI9UXveqQNxu5QqC_L_LjnT0quC7exF6t"/>
+</div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-secondary">Muralidhar Krishna</h3>
+<p class="text-xs text-slate-500">Hand-Painted Resin</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold">4.7</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-slate-900">₹3,450</span>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-2.5 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">shopping_basket</span>
+                                        Add to Cart
+                                    </button>
+<button class="custom-brush-btn px-4 py-2.5 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">brush</span>
+                                        Customize
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+<div class="relative h-64 bg-slate-50 flex items-center justify-center p-6">
+<img class="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Hanuman miniature with muscular details in stone finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9hLr1YMLwbWSBWoTbyk2Z-7sFvHS8ubX950wRZgTkkkXf5VLjUrML-fTIXPDhC5CyqYGn2feMaZyTB92dZXlAvDtcq4Nf8mEyHgKKJzCQ-H83ChWl2qGCOrensWjUMl9hxa58PWfUDRTv5GpbZgE5szdCHliK3CK5TA6LqpQeRDuw5n00m2LX2arzxx0or22uBEOVOdPWlJD1_3M78ytbv06DSDiqW_vQDQf1OMlAUyIIaPwUg_v4sIUsfV6xjlXv3A1zl8Qi-60U"/>
+</div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-secondary">Bajrang Bali</h3>
+<p class="text-xs text-slate-500">Antique Stone Resin</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-slate-900">₹5,100</span>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-2.5 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">shopping_basket</span>
+                                        Add to Cart
+                                    </button>
+<button class="custom-brush-btn px-4 py-2.5 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">brush</span>
+                                        Customize
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+<div class="relative h-64 bg-slate-50 flex items-center justify-center p-6">
+<span class="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase z-10">Limited Edition</span>
+<img class="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500" data-alt="Intricate Maa Durga 3D sculpture with ten arms" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjBvqU-bGYeL-Y53QNqSGH9VJ1kwDH1ezZxt9PcsjuQiXv6yLSI2MNPJOW7Ptr9FskjNM4VJ7jIk5_qyUycApT5rUrAbAY-TZYQqDdsVsDRA_n0-9kbJsCERmFeD1CAUmj9ukzsSvKvOhwdPEsT5qUgZOmIhZctFjqfNqxLE0qiTqmtA_b0EPmOu_mEU3gYUHSN1oW2Kg3q-Msbnw4_6VVsxJw-z_1BGPwb5-C8kMAgNAn4fwZUZQTMz6f1IGnkoKs-vflhtP_Dmc4"/>
+</div>
+<div class="p-5 space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-secondary">Mahishasuramardini</h3>
+<p class="text-xs text-slate-500">Gold Plated Resin</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm fill-1">star</span>
+<span class="text-sm font-bold">5.0</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-slate-900">₹18,500</span>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 py-2.5 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">shopping_basket</span>
+                                        Add to Cart
+                                    </button>
+<button class="custom-brush-btn px-4 py-2.5 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+<span class="material-symbols-outlined text-lg">brush</span>
+                                        Customize
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-12 mb-8">
+<nav class="flex gap-2">
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:border-primary transition-colors font-medium">2</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:border-primary transition-colors font-medium">3</button>
+<button class="size-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary text-background-light py-12 px-6 md:px-20 mt-10">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-4xl">temple_hindu</span>
+<h2 class="text-white text-xl font-bold">AMP 3D World</h2>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">
+                        Bringing ancient divinity to life through state-of-the-art 3D printing and artisan finishing.
+                    </p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-white/60">
+<li><a class="hover:text-primary" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary" href="#">Best Sellers</a></li>
+<li><a class="hover:text-primary" href="#">Custom Orders</a></li>
+<li><a class="hover:text-primary" href="#">Gift Cards</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Customer Care</h4>
+<ul class="space-y-2 text-sm text-white/60">
+<li><a class="hover:text-primary" href="#">Shipping Policy</a></li>
+<li><a class="hover:text-primary" href="#">Return Center</a></li>
+<li><a class="hover:text-primary" href="#">FAQ</a></li>
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Newsletter</h4>
+<p class="text-sm text-white/60 mb-4">Join our community for divine updates and early access.</p>
+<div class="flex gap-2">
+<input class="bg-white/10 border-none rounded-lg focus:ring-1 focus:ring-primary w-full text-sm" placeholder="Email" type="email"/>
+<button class="bg-primary text-white px-4 py-2 rounded-lg font-bold text-sm">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto pt-10 mt-10 border-t border-white/10 text-center text-xs text-white/40">
+                © 2024 AMP 3D World. Crafted with devotion in India.
+            </div>
+</footer>
+</div>
+</div>
+</body></html>
