@@ -11,7 +11,7 @@ const products = [
     material: "PLA",
     price: "₹1,499",
     rating: "5.0",
-    image: "/src/assets/hero-figurine.png",
+    image: "/images/hero-figurine.png",
     badge: "Bestseller",
     isFeatured: true
   },
@@ -21,7 +21,7 @@ const products = [
     material: "PLA",
     price: "₹2,100",
     rating: "4.9",
-    image: "/src/assets/family-figurine.png",
+    image: "/images/family-figurine.png",
     badge: null,
     isFeatured: true
   },
@@ -31,7 +31,7 @@ const products = [
     material: "PETG",
     price: "₹899",
     rating: "4.8",
-    image: "/src/assets/pet-figurine.png",
+    image: "/images/pet-figurine.png",
     badge: null,
     isFeatured: true
   },
@@ -41,7 +41,7 @@ const products = [
     material: "High Detail Resin",
     price: "₹1,200",
     rating: "4.9",
-    image: "/src/assets/portrait-figurine.png",
+    image: "/images/portrait-figurine.png",
     badge: "Most Realistic",
     isFeatured: true
   },

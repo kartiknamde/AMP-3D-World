@@ -4,9 +4,6 @@ import { CATEGORIES } from '../constants/products';
 import { fetchProducts } from '../api';
 import { useCart } from '../context/CartContext';
 import CustomizationModal from '../components/CustomizationModal';
-import portraitImg from '../assets/portrait-figurine.png';
-import heroImg from '../assets/hero-figurine.png';
-import petImg from '../assets/pet-figurine.png';
 
 const Shop = () => {
   const [searchParams] = useSearchParams();
@@ -56,8 +53,8 @@ const Shop = () => {
 
   const featuredCollections = [
     { name: "Divine Deity", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBgtZzWkROuQ06j8a6dXMC0LxuMU1UtVqek5GJ7NXCnT7gdwVLCkkhjHhPQq5yn7J0H8B7wzkAqPsFkwgNfylNmZ8ie6ZftlqKO6Dwyq8VlBi6IJllqPaSEeHTzEdT62xxkEMdj8YEfyObgVs8bd156x3vdCRN33agLwTbC95hCoHHuX__Rm3sZ9GEbJg0eKhrBXiYfaAGy0uvy8KJI-hCRvyoxiB2q-jhBCuzgMd6PxdlX9BGZjVbjtNJPTbqe5f1uDAu-gTutGs9p" },
-    { name: "Couple Miniature", image: heroImg },
-    { name: "Pet Miniature", image: petImg },
+    { name: "Couple Miniature", image: "/images/hero-figurine.png" },
+    { name: "Pet Miniature", image: "/images/pet-figurine.png" },
     { name: "Art Miniature", image: "https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&q=80&w=800" }
   ];
 
@@ -173,7 +170,7 @@ const Shop = () => {
                 <img 
                   className="relative z-10 w-full h-full object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500" 
                   alt="Featured Miniature" 
-                  src={portraitImg}
+                  src="/images/portrait-figurine.png"
                 />
               </div>
             </div>

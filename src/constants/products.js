@@ -1,8 +1,3 @@
-import familyImg from '../assets/family-figurine.png';
-import petImg from '../assets/pet-figurine.png';
-import portraitImg from '../assets/portrait-figurine.png';
-import heroImg from '../assets/hero-figurine.png';
-
 export const PRODUCTS = [
   {
     id: 1,
@@ -11,7 +6,7 @@ export const PRODUCTS = [
     material: "PLA",
     price: "₹1,499",
     rating: "5.0",
-    image: heroImg,
+    image: "/images/hero-figurine.png",
     badge: "Bestseller"
   },
   {
@@ -21,7 +16,7 @@ export const PRODUCTS = [
     material: "PLA",
     price: "₹2,100",
     rating: "4.9",
-    image: familyImg,
+    image: "/images/family-figurine.png",
     badge: null
   },
   {
@@ -31,7 +26,7 @@ export const PRODUCTS = [
     material: "PETG",
     price: "₹899",
     rating: "4.8",
-    image: petImg,
+    image: "/images/pet-figurine.png",
     badge: null
   },
   {
@@ -41,7 +36,7 @@ export const PRODUCTS = [
     material: "High Detail Resin",
     price: "₹1,200",
     rating: "4.9",
-    image: portraitImg,
+    image: "/images/portrait-figurine.png",
     badge: "Most Realistic"
   },
   {

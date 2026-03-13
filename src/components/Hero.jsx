@@ -1,4 +1,3 @@
-import heroImage from '../assets/hero-figurine.png';
 import { Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -34,7 +33,7 @@ const Hero = () => {
         
         <div className="hero-visual">
           <div className="image-card">
-            <img src={heroImage} alt="3D Wedding Couple Miniature" />
+            <img src="/images/hero-figurine.png" alt="3D Wedding Couple Miniature" />
             <div className="floating-badge flex items-center">
               <div className="badge-icon">❤</div>
               <div>

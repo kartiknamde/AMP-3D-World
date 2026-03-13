@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { submitCustomOrder } from '../api';
-import previewPlaceholder from '../assets/hero-figurine.png';
 import { Upload, Ruler, Package, Star, AlertCircle } from 'lucide-react';
 
 const LiveCustomizer = () => {
