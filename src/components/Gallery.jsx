@@ -1,12 +1,8 @@
-import w1 from '../assets/workshop-1.png';
-import w2 from '../assets/workshop-2.png';
-
 const Gallery = () => {
-  // Using some high-quality unsplash placeholders for the ones I couldn't generate
   const images = [
-    { id: 1, src: w1, alt: 'Painting miniature' },
+    { id: 1, src: '/images/workshop-1.png', alt: 'Painting miniature' },
     { id: 2, src: 'https://images.unsplash.com/photo-1633513192109-29007469a473?auto=format&fit=crop&q=80&w=800', alt: '3D Printer' },
-    { id: 3, src: w2, alt: 'Workshop printers' },
+    { id: 3, src: '/images/workshop-2.png', alt: 'Workshop printers' },
     { id: 4, src: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800', alt: 'Finished products' },
     { id: 5, src: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=800', alt: 'Gift packaging' }
   ];

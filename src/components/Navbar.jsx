@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, ShoppingCart, User, Menu, X, ChevronRight, TrendingUp, LogOut, ChevronDown } from 'lucide-react';
+import { Search, ShoppingCart, User, Menu, X, ChevronRight, TrendingUp, LogOut, ChevronDown, Package } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { fetchProducts, fetchFeaturedProducts } from '../api';
 import { useCart } from '../context/CartContext';
@@ -17,10 +17,21 @@ const Navbar = () => {
   const searchRef = useRef(null);
   const profileRef = useRef(null);
 
-  // Load user from localStorage
+  // Load user from localStorage and keep in sync after login/logout
   useEffect(() => {
-    const stored = localStorage.getItem('userInfo');
-    if (stored) setUserInfo(JSON.parse(stored));
+    const syncUser = () => {
+      const stored = localStorage.getItem('userInfo');
+      setUserInfo(stored ? JSON.parse(stored) : null);
+    };
+    syncUser();
+    // Same-tab login event (dispatched by auth page after successful login)
+    window.addEventListener('userLogin', syncUser);
+    // Cross-tab sync
+    window.addEventListener('storage', syncUser);
+    return () => {
+      window.removeEventListener('userLogin', syncUser);
+      window.removeEventListener('storage', syncUser);
+    };
   }, []);
 
   // Load popular suggestions once
@@ -108,6 +119,12 @@ const Navbar = () => {
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/shop" className="nav-link">Shop</Link>
             <Link to="/custom" className="nav-link">Custom Design</Link>
+            {userInfo && (
+              <Link to="/orders" className="nav-link nav-link-orders flex items-center gap-2">
+                <Package size={16} />
+                My Orders
+              </Link>
+            )}
           </div>
         </div>
 
@@ -189,6 +206,14 @@ const Navbar = () => {
                         <strong>{userInfo.name}</strong>
                         <span>{userInfo.email}</span>
                       </div>
+                      <Link
+                        to="/orders"
+                        className="dropdown-link"
+                        onClick={() => setIsProfileOpen(false)}
+                      >
+                        <Package size={15} />
+                        My Orders
+                      </Link>
                       <button className="signout-btn" onClick={handleSignOut}>
                         <LogOut size={15} />
                         Sign Out
@@ -540,6 +565,33 @@ const Navbar = () => {
 
         .signout-btn:hover {
           background: #fef2f2;
+        }
+
+        .dropdown-link {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 12px 18px;
+          color: #800000;
+          font-weight: 600;
+          font-size: 0.9rem;
+          text-decoration: none;
+          transition: background 0.2s;
+          border-bottom: 1px solid #f5f5f5;
+        }
+
+        .dropdown-link:hover {
+          background: #fff9f0;
+        }
+
+        .nav-link-orders {
+          color: #800000 !important;
+          font-weight: 700;
+        }
+
+        .nav-link-orders:hover {
+          color: #f2930d !important;
         }
 
         .login-link {

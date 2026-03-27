@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import workshopImg from '../assets/workshop-1.png';
+const workshopImg = '/images/workshop-1.png';
 import { Phone, MessageCircle, Instagram, X } from 'lucide-react';
 
 const AboutUs = () => {

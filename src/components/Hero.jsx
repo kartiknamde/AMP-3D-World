@@ -19,7 +19,7 @@ const Hero = () => {
           </p>
           
           <div className="hero-btns flex">
-            <button className="btn btn-primary">Create Your Miniature</button>
+            <Link to="/custom" className="btn btn-primary">Create Your Miniature</Link>
             <Link to="/shop" className="btn btn-secondary">Browse Products</Link>
           </div>
           

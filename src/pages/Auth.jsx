@@ -73,6 +73,7 @@ const Auth = () => {
         data = await register(formData);
       }
       localStorage.setItem('userInfo', JSON.stringify(data));
+      window.dispatchEvent(new Event('userLogin'));
       navigate('/');
     } catch (err) {
       setError(err.message);
